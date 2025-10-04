@@ -1,13 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { TypeSelector } from "@/components/TypeSelector";
+import { EmailForm } from "@/components/EmailForm";
+import { LetterForm } from "@/components/LetterForm";
+import { ResultView } from "@/components/ResultView";
+
+type View = "select" | "email" | "letter" | "result";
 
 const Index = () => {
+  const [currentView, setCurrentView] = useState<View>("select");
+  const [generatedContent, setGeneratedContent] = useState("");
+
+  const handleTypeSelect = (type: "email" | "letter") => {
+    setCurrentView(type);
+  };
+
+  const handleGenerate = (content: string) => {
+    setGeneratedContent(content);
+    setCurrentView("result");
+  };
+
+  const handleBack = () => {
+    setCurrentView("select");
+    setGeneratedContent("");
+  };
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      {currentView === "select" && <TypeSelector onSelect={handleTypeSelect} />}
+      {currentView === "email" && <EmailForm onBack={handleBack} onGenerate={handleGenerate} />}
+      {currentView === "letter" && <LetterForm onBack={handleBack} onGenerate={handleGenerate} />}
+      {currentView === "result" && <ResultView content={generatedContent} onBack={handleBack} />}
+    </>
   );
 };
 
