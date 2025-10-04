@@ -1,4 +1,123 @@
-# Welcome to your Lovable project
+# ✉️ AI Email & Letter Writer
+
+A clean, modern web tool that generates **emails and letters** automatically using the **Gemini API**.  
+Built with **Lovebal AI**, this app helps users craft polished messages in seconds — whether it’s a professional email or a personal letter.
+
+---
+
+## 🚀 Features
+
+- 🧠 **AI-Powered Writing** – Generates human-like text using Google’s Gemini API.  
+- ✉️ **Email or Letter Mode** – Choose between creating an email or a letter.  
+- 🧾 **Dynamic Forms** – Simple input forms tailored to your selected mode.  
+- 👁️ **Live Preview** – See the AI-generated text before downloading.  
+- 📋 **Copy to Clipboard** – Instantly copy the output.  
+- 💾 **Download as Word (.docx)** – Export your final message easily.  
+- 🎨 **Modern UI** – White and blue theme with smooth gradients, minimal layout, and soft shadows.  
+- 📱 **Responsive Design** – Works beautifully across all devices.
+
+---
+
+## 🧩 How It Works
+
+1. **Select** the type of message — Email or Letter.  
+2. **Fill out** the short form with key details.  
+3. **Click Generate** to let Gemini create your message.  
+4. **Preview**, **Copy**, or **Download** your AI-written result.
+
+---
+
+## ⚙️ Gemini API Integration
+
+This app uses the **Gemini 2.0 Flash** model for text generation.
+
+**API Endpoint:**
+
+- https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
+
+**Example cURL Request:**
+```bash
+curl "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent" \
+  -H "Content-Type: application/json" \
+  -H "X-goog-api-key: GEMINI_API_KEY" \
+  -X POST \
+  -d '{
+    "contents": [
+      {
+        "parts": [
+          {
+            "text": "Explain how AI works in a few words"
+          }
+        ]
+      }
+    ]
+  }'
+```
+
+- ⚠️ Replace GEMINI_API_KEY with your actual Gemini API key.
+
+## 🎨 Design System
+
+- Primary Colors: White and Blue
+- Typography: Clean and minimal (inspired by Notion & Linear)
+- UI Style: Soft shadows, blue gradients, smooth hover effects
+- Layout: Centered forms, ample white space, responsive grid
+
+## 🧱 Forms Overview
+
+### Email Form
+
+- Subject line
+- Recipient name
+- Message purpose
+- Tone
+- Key details / points
+- Closing signature
+
+### Letter Form
+
+- Recipient name and address (optional)
+- Sender name and address (optional)
+- Tone
+- Reason for letter
+- Key details / points
+
+## 🛠️ Tech Stack
+
+- Frontend: Lovebal AI
+- Backend: Gemini API (Google Generative Language)
+- Language: JavaScript
+- File Exports: DOCX
+
+## 🧭 Future Enhancements
+
+- ✍️ Editable text area for refining AI output
+- 🗂️ Save message history
+- 🌐 Multi-language support
+- 💌 Email sending integration
+
+## 📄 License
+
+This project is open-source and available under the MIT License.
+
+## 💙 Built with Lovebal AI + Gemini
+
+“Write smarter, not harder — let AI handle your words.”
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Lovable project
 
 ## Project info
 
